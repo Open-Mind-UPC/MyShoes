@@ -1,0 +1,43 @@
+.main-content1{
+  display: flex;
+  width: 100%;
+  margin-bottom: 2px;
+}
+.main-content2{
+  display: flex;
+  margin: 5px;
+}
+.main-content3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.button-inside-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  color:white !important;
+}
+.img1{
+  max-width: 50%;
+  max-height: 50%;
+}
+.article-card {
+  margin: 5px;
+  width: 25%;
+}
+.action-button2 {
+  display: flex;
+  background-color: black;
+  align-items: center;
+  font-size: large;
+  color: white !important;
+  margin: 15px;
+  width:15%;
+}
+.default-spacer {
+  flex: 1 1 auto;
+}
