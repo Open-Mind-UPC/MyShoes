@@ -17,6 +17,11 @@ import { FooterContentComponent } from './web/components/footer-content/footer-c
 import { MainWebComponent } from './web/components/main-web/main-web.component';
 import { MainContentComponent } from './web/components/main-content/main-content.component';
 import { HeaderContentComponent } from './web/components/header-content/header-content.component';
+import { UserLoginComponent } from './authentication/login/pages/user-login/user-login.component';
+import {CommonModule} from "@angular/common";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -25,7 +30,8 @@ import { HeaderContentComponent } from './web/components/header-content/header-c
     MainWebComponent,
     MainContentComponent,
     HeaderContentComponent,
-    MainWebComponent
+    MainWebComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,12 @@ import { HeaderContentComponent } from './web/components/header-content/header-c
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule,
+    MatFormFieldModule,
+    CommonModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   bootstrap: [AppComponent]
 })

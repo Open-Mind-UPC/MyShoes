@@ -1,0 +1,52 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #d4d4d4;
+}
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  background: #ececec;
+  text-align: center;
+  padding: 30px 50px;
+  position: absolute;
+  box-shadow: 0 5px 10px rgb(47, 47, 47);
+}
+
+.h2{
+  color: black;
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.inputForm{
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #252525;
+  border-bottom: 2px #252525;
+  padding: 10px;
+  font-size:  15px;
+  width: 180px;
+}
+
+.forgot-password{
+  font-size: 12px;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+}
+
