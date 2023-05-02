@@ -16,7 +16,11 @@ export class ForgotPasswordComponent implements OnInit{
 
   ngOnInit(): void {}
 
-  sendResetPasswordEmail(){
-    this.forgotPasswordService.sendResetPasswordEmail(this.email);
+  sendResetPasswordEmail() {
+
+    if (this.emailFormControl.valid)
+      console.log("Email sent correctly"); // Using this for testing.
+      //this.forgotPasswordService.sendResetPasswordEmail(this.email);
+    else console.log("Empty or Incorrect Email");
   }
 }
