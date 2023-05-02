@@ -1,6 +1,6 @@
 <div class = "container">
   <form class="login-form">
-    <h2>Login</h2>
+    <h1 class="title">Login</h1>
     <mat-form-field>
       <mat-label>Email</mat-label>
       <input matInput type="text" class="inputForm" [formControl]="emailFormControl" placeholder="Ex pat@example.com" [(ngModel)]="email" required name="email">
@@ -20,8 +20,8 @@
       </mat-error>
     </mat-form-field>
     <br>
-    <a class="forgot-password" href="#">Forgot password?</a>
-    <br>
     <button mat-raised-button color="warn" (click)="login()" >Join</button>
+    <br>
+    <a class="forgot-password" href="#">Forgot password?</a>
   </form>
 </div>

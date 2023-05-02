@@ -22,6 +22,7 @@ import {CommonModule} from "@angular/common";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import { ForgotPasswordComponent } from './authentication/login/pages/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MatInputModule} from "@angular/material/input";
     MainContentComponent,
     HeaderContentComponent,
     MainWebComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import {MatInputModule} from "@angular/material/input";
     MatFormFieldModule,
     CommonModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })
