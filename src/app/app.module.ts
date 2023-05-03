@@ -24,6 +24,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import { ForgotPasswordComponent } from './authentication/login/pages/forgot-password/forgot-password.component';
 import {RouterModule, Routes} from "@angular/router";
+import {NavComponent} from "./shop/pages/nav/nav.component";
+import {MatSelectModule} from "@angular/material/select";
+import {ListShoesComponent} from "./shop/pages/list-shoes/list-shoes.component";
 
 const routes: Routes =[
   { path: 'home', component: MainWebComponent },
@@ -40,7 +43,9 @@ const routes: Routes =[
     HeaderContentComponent,
     MainWebComponent,
     UserLoginComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    NavComponent,
+    ListShoesComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,7 @@ const routes: Routes =[
     ReactiveFormsModule,
     MatInputModule,
     HttpClientModule,
+    MatSelectModule,
     RouterModule.forRoot(routes, {enableTracing: true})
   ],
   bootstrap: [AppComponent]
