@@ -24,6 +24,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import { ForgotPasswordComponent } from './authentication/login/pages/forgot-password/forgot-password.component';
 import {RouterModule, Routes} from "@angular/router";
+import { UserSignUpComponent } from './authentication/signup/pages/user-sign-up/user-sign-up.component';
 import {NavComponent} from "./shop/pages/nav/nav.component";
 import {MatSelectModule} from "@angular/material/select";
 import {ListShoesComponent} from "./shop/pages/list-shoes/list-shoes.component";
@@ -32,6 +33,7 @@ const routes: Routes =[
   { path: 'home', component: MainWebComponent },
   { path: 'login', component: UserLoginComponent },
   { path: 'reset-password', component: ForgotPasswordComponent },
+  { path: 'sign-up', component: UserSignUpComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
 @NgModule({
@@ -44,6 +46,7 @@ const routes: Routes =[
     MainWebComponent,
     UserLoginComponent,
     ForgotPasswordComponent,
+    UserSignUpComponent,
     NavComponent,
     ListShoesComponent
   ],
