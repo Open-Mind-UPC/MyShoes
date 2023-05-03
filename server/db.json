@@ -30,5 +30,28 @@
       "email": "fabricio_upc@hotmail.com",
       "password": "opensource"
     }
+  ],
+  "shoes": [
+    {
+      "id": 1,
+      "name": "Nike Air Force One drip blue",
+      "description": "Personalized painted blue drip style slippers Available in sizes from 28 -43",
+      "price": "$50",
+      "img":"https://i.etsystatic.com/28924822/r/il/266da9/3400342986/il_fullxfull.3400342986_oh75.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Adidas superstar shark",
+      "description": "Personalized brown shark style sneakers Available in sizes 36 to 42",
+      "price": "$60",
+      "img": "https://i.pinimg.com/originals/9d/1f/b4/9d1fb4c2df48dd9726deca53db5b0efc.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Converse all star feather",
+      "description": "Personalized light blue feather style slippers Available in sizes 28 to 43",
+      "price": "$55",
+      "img":"https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
+    }
   ]
 }
