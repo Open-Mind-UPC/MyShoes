@@ -52,6 +52,21 @@
       "description": "Personalized light blue feather style slippers Available in sizes 28 to 43",
       "price": "$55",
       "img":"https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Converse all star feather",
+      "description": "Personalized light blue feather style slippers Available in sizes 28 to 43",
+      "price": "$55",
+      "img":"https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Converse all star feather",
+      "description": "Personalized light blue feather style slippers Available in sizes 28 to 43",
+      "price": "$55",
+      "img":"https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
     }
+
   ]
 }
