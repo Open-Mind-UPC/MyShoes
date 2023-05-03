@@ -45,11 +45,13 @@
 .price-container{
   text-align: center;
   padding: 15px;
+  font-size: 20px;
+  font-style: bold;
 }
 
 .mat-card {
-  border: 2px solid black;
   padding: inherit;
+  box-shadow: black 0px 0px 10px;
 }
 
 .content {
