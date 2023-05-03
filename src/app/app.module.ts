@@ -34,6 +34,7 @@ const routes: Routes =[
   { path: 'login', component: UserLoginComponent },
   { path: 'reset-password', component: ForgotPasswordComponent },
   { path: 'sign-up', component: UserSignUpComponent },
+  { path: 'shop', component: NavComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
 @NgModule({
