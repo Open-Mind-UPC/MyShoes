@@ -1,6 +1,6 @@
 <div class = "container">
-  <form class="login-form">
-    <h1 class="title">Login</h1>
+  <form class="register-form">
+    <h1 class="title">Sign Up</h1>
     <mat-form-field>
       <mat-label>Email</mat-label>
       <input matInput type="text" class="inputForm" [formControl]="emailFormControl" placeholder="Ex pat@example.com" [(ngModel)]="email" required name="email">
@@ -19,11 +19,18 @@
         Password is <strong>required</strong>
       </mat-error>
     </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" class = "inputForm" [formControl]="nameFormControl" [(ngModel)]="name" name="name" placeholder="name" required>
+      <mat-error *ngIf="nameFormControl.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
     <br>
-    <a class="forgot-password" href="./reset-password">Forgot password?</a>
+    <button mat-raised-button color="warn" (click)="register()">Register</button>
     <br>
-    <button mat-raised-button color="warn" (click)="login()" >Join</button>
-    <br>
-    <button mat-raised-button color="warn" routerLink="/sign-up">Sign Up</button>
+    <p>Already have an account?</p>
+    <a class="log-in" href="/login">Log in</a>
   </form>
 </div>
