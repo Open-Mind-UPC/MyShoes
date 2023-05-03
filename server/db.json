@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "William",
+      "email": "williammar954@hotmail.com",
+      "password": "upc123"
+    },
+    {
+      "id": 2,
+      "name": "Juan",
+      "email": "juan_2@hotmail.com",
+      "password": "cont123"
+    },
+    {
+      "id": 3,
+      "name": "Joanna",
+      "email": "joanna_riega@hotmail.com",
+      "password": "joannacontra"
+    },
+    {
+      "id": 4,
+      "name": "Tomas",
+      "email": "tommy_q@gmail.com",
+      "password": "mazeTomas"
+    },
+    {
+      "id": 5,
+      "name": "Fabricio",
+      "email": "fabricio_upc@hotmail.com",
+      "password": "opensource"
+    }
+  ]
+}

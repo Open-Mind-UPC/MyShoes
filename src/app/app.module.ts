@@ -24,11 +24,13 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import { ForgotPasswordComponent } from './authentication/login/pages/forgot-password/forgot-password.component';
 import {RouterModule, Routes} from "@angular/router";
+import { UserSignUpComponent } from './authentication/signup/pages/user-sign-up/user-sign-up.component';
 
 const routes: Routes =[
   { path: 'home', component: MainWebComponent },
   { path: 'login', component: UserLoginComponent },
   { path: 'reset-password', component: ForgotPasswordComponent },
+  { path: 'sign-up', component: UserSignUpComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
 @NgModule({
@@ -40,7 +42,8 @@ const routes: Routes =[
     HeaderContentComponent,
     MainWebComponent,
     UserLoginComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    UserSignUpComponent
   ],
   imports: [
     BrowserModule,
