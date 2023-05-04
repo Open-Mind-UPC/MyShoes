@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
+import{PerfilContentComponent} from "./perfil/perfil-content.component";
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from "@angular/common/http";
@@ -34,6 +34,7 @@ const routes: Routes =[
   { path: 'login', component: UserLoginComponent },
   { path: 'reset-password', component: ForgotPasswordComponent },
   { path: 'sign-up', component: UserSignUpComponent },
+  { path: 'perfil', component: PerfilContentComponent },
   { path: 'shop', component: NavComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
@@ -49,7 +50,8 @@ const routes: Routes =[
     ForgotPasswordComponent,
     UserSignUpComponent,
     NavComponent,
-    ListShoesComponent
+    ListShoesComponent,
+    PerfilContentComponent
   ],
   imports: [
     BrowserModule,
