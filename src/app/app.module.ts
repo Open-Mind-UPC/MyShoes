@@ -28,6 +28,7 @@ import { UserSignUpComponent } from './authentication/signup/pages/user-sign-up/
 import {NavComponent} from "./shop/pages/nav/nav.component";
 import {MatSelectModule} from "@angular/material/select";
 import {ListShoesComponent} from "./shop/pages/list-shoes/list-shoes.component";
+import {EditarPerfilContentComponent} from "./editar-perfil/editar-perfil-content.component";
 
 const routes: Routes =[
   { path: 'home', component: MainWebComponent },
@@ -35,6 +36,7 @@ const routes: Routes =[
   { path: 'reset-password', component: ForgotPasswordComponent },
   { path: 'sign-up', component: UserSignUpComponent },
   { path: 'perfil', component: PerfilContentComponent },
+  { path: 'editar', component: EditarPerfilContentComponent },
   { path: 'shop', component: NavComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
@@ -51,7 +53,8 @@ const routes: Routes =[
     UserSignUpComponent,
     NavComponent,
     ListShoesComponent,
-    PerfilContentComponent
+    PerfilContentComponent,
+    EditarPerfilContentComponent
   ],
   imports: [
     BrowserModule,
