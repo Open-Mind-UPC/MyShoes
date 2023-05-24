@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ShoesServiceService} from "../../services/shoes-service.service";
+import {ShoesService} from "../../../shared/services/shoes/shoes.service";
 
 @Component({
   selector: 'app-nav',
@@ -8,7 +8,7 @@ import {ShoesServiceService} from "../../services/shoes-service.service";
 })
 export class NavComponent {
   shoes: Array<any> = [];
-  constructor(private shoesService: ShoesServiceService) {
+  constructor(private shoesService: ShoesService) {
     this.shoesService.initShoes().subscribe((data: any) => {
       this.shoes = data;
     });
