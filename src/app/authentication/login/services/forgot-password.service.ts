@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {EmailService} from "../../../shared/services/email.service";
+import {EmailService} from "../../../shared/services/email/email.service";
 
 @Injectable({
   providedIn: 'root'

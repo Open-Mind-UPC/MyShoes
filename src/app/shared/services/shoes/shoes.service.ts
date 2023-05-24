@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError, Observable, retry, throwError} from "rxjs";
-import {Shoes} from "../model/shoes";
+import {Shoes} from "../../../shop/model/shoes";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ShoesServiceService{
+export class ShoesService {
   basePath = 'http://localhost:3000/api/v1/shoes';
 
   httpOptions = {
@@ -32,6 +32,11 @@ export class ShoesServiceService{
   //getAll
   initShoes(){
     return this.http.get(`${this.basePath}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  getTrendShoes(){
+    return this.http.get(`${this.basePath}?_sort=purchased&_order=desc&_limit=4`)
       .pipe(retry(2), catchError(this.handleError));
   }
 }

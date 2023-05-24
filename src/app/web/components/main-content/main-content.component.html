@@ -6,51 +6,26 @@
     SEE MORE<mat-icon>more_horiz</mat-icon></a>
 </div>
 <div class="main-content2">
-  <mat-card class="article-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>Flowers and birds Shoes</mat-card-title>
-      </mat-card-title-group>
-    </mat-card-header>
-    <img mat-card-image src="https://ae01.alicdn.com/kf/HTB1KJi1ah1YBuNjy1zcq6zNcXXaK/Zapatos-con-flores-y-p-jaros-para-mujer-calzado-de-estilo-chino-Noble-Mary-Janes-bordado.jpg" alt="ZAPATILLA FLORES Y AVES"/>
-    <mat-card-content>
-      <p>Price: $50</p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="article-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>Fish Shoes </mat-card-title>
-      </mat-card-title-group>
-    </mat-card-header>
-    <img mat-card-image src="https://i.pinimg.com/750x/74/76/e4/7476e4c824a80ff3ea7c048e5c2ea6de.jpg" alt="ZAPATILLA PELUCHES"/>
-    <mat-card-content>
-      <p>Price: $60</p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="article-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>Heards Shoes</mat-card-title>
-      </mat-card-title-group>
-    </mat-card-header>
-    <img mat-card-image src="https://www.america-retail.com/static//2022/02/skechers-1.jpg" alt="ZAPATILLA CORAZONES"/>
-    <mat-card-content>
-      <p>Price: $65</p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="article-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>Snoopy Shoes</mat-card-title>
-      </mat-card-title-group>
-    </mat-card-header>
-    <img  mat-card-image src="https://i.pinimg.com/originals/db/fe/44/dbfe44d073578c598245f18ab6396635.jpg" alt="ZAPATILLA SNOOPY"/>
-    <mat-card-content>
-      <p>Price: $55</p>
-    </mat-card-content>
-  </mat-card>
+  <div class="column" *ngFor="let item of trends">
+    <mat-card class="mat-card">
+      <mat-card-title class="title">{{item.name}}</mat-card-title>
+      <div class="img-container"><img src="{{item.img}}" alt="{{item.name}}"></div>
+      <mat-card-content class="content">{{item.description}}</mat-card-content>
+      <div class="price-container">Price: {{item.price}}</div>
+      <mat-form-field appearance="fill">
+        <mat-label>Size</mat-label>
+        <mat-select>
+          <mat-option value="8 US">8 US</mat-option>
+          <mat-option value="8.5 US">8.5 US</mat-option>
+          <mat-option value="9 US">9 US</mat-option>
+          <mat-option value="9.5 US">9.5 US</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button style="background-color: black; color:white" mat-raised-button label="BUY">BUY</button>
+    </mat-card>
+  </div>
 </div>
+
 <div class="main-content3">
   <img class="img1" src="https://cdn.discordapp.com/attachments/1094699396026880057/1103450727713611796/image.png" alt="ZAPATILLAS DISEÑO"/>
   <a mat-button class="button-inside-image" href="/index.html">Start to design</a>
