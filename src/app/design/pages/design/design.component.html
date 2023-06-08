@@ -1,5 +1,39 @@
 <app-header-content/>
 <br>
-
+<div class="container">
+  <div class="shoe-selection">
+    <mat-form-field appearance="fill">
+      <mat-label>Select a shoe</mat-label>
+      <mat-select (selectionChange)="onShoeSelection($event.value)">
+        <mat-option *ngFor="let item of shoes" [value]="item">{{ item.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <mat-card class="card-container" *ngIf="selectedShoe">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{selectedShoe.name}}</mat-card-title>
+      </mat-card-title-group>
+    </mat-card-header>
+    <img class="image" [src]="selectedShoe.img" alt="{{ selectedShoe.name }}">
+  </mat-card>
+  <div class="color-selection" *ngIf="showColorField">
+    <div class="color-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Select a color</mat-label>
+        <mat-select [(ngModel)]="selectedColor">
+          <mat-option value="red">Red</mat-option>
+          <mat-option value="blue">Blue</mat-option>
+          <mat-option value="black">Black</mat-option>
+          <mat-option value="white">White</mat-option>
+          <mat-option value="yellow">Yellow</mat-option>
+          <mat-option value="green">Green</mat-option>
+          <mat-option value="brown">Brown</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="color-circle" [style.backgroundColor]="selectedColor"></div>
+    </div>
+  </div>
+</div>
 <br>
 <app-footer-content/>
