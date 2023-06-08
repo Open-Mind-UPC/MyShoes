@@ -1,5 +1,5 @@
-img{
-  width: 70%;
+img.image {
+  width: 100%;
   height: auto;
 }
 .container {
@@ -7,7 +7,7 @@ img{
   justify-content: space-between;
 }
 .shoe-selection, .color-selection {
-  width: 45%;
+  width: 25%;
 }
 .card-container{
   display: flex;
@@ -24,8 +24,8 @@ img{
   align-items: center;
 }
 .color-circle {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin-left: 10px;
 }

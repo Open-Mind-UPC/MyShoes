@@ -30,6 +30,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {ListShoesComponent} from "./shop/pages/list-shoes/list-shoes.component";
 import {EditarPerfilContentComponent} from "./editar-perfil/editar-perfil-content.component";
 import { DesignComponent } from './design/pages/design/design.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 const routes: Routes =[
   { path: 'home', component: MainWebComponent },
@@ -79,7 +80,8 @@ const routes: Routes =[
     MatInputModule,
     HttpClientModule,
     MatSelectModule,
-    RouterModule.forRoot(routes, {enableTracing: true})
+    RouterModule.forRoot(routes, {enableTracing: true}),
+    MatButtonToggleModule
   ],
   bootstrap: [AppComponent]
 })

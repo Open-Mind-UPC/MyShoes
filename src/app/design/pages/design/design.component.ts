@@ -12,12 +12,16 @@ export class DesignComponent implements OnInit{
   selectedShoe: any;
   showColorField: boolean = false;
   selectedColor: string = '';
+  selectedMaterial: string = '';
+
   constructor(private shoesService: ShoesServiceService) {
   }
   ngOnInit(): void {
     this.shoesService.initShoes().subscribe((data: any) => {
       this.shoes = data;
+
     });
+
   }
   onShoeSelection(shoe: any): void {
     this.selectedShoe = shoe;

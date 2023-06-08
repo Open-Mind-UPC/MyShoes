@@ -1,5 +1,8 @@
 <app-header-content/>
 <br>
+<div>
+  <h1>DESIGN YOR SHOE</h1>
+</div>
 <div class="container">
   <div class="shoe-selection">
     <mat-form-field appearance="fill">
@@ -15,7 +18,7 @@
         <mat-card-title>{{selectedShoe.name}}</mat-card-title>
       </mat-card-title-group>
     </mat-card-header>
-    <img class="image" [src]="selectedShoe.img" alt="{{ selectedShoe.name }}">
+    <img class="image" [src]="selectedShoe.img" alt="{{ selectedShoe.name }}" style="width: 100%; height: auto;">
   </mat-card>
   <div class="color-selection" *ngIf="showColorField">
     <div class="color-container">
@@ -33,6 +36,17 @@
       </mat-form-field>
       <div class="color-circle" [style.backgroundColor]="selectedColor"></div>
     </div>
+    <div *ngIf="showColorField">
+      <mat-form-field appearance="fill">
+        <mat-label>Select a material</mat-label>
+        <mat-select [(ngModel)]="selectedMaterial">
+          <mat-option value="tela">Tela</mat-option>
+          <mat-option value="algodon">Algodón</mat-option>
+          <mat-option value="cuero">Cuero</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-button-toggle>SAVE</mat-button-toggle>
   </div>
 </div>
 <br>
