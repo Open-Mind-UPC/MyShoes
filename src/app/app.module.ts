@@ -29,6 +29,7 @@ import {NavComponent} from "./shop/pages/nav/nav.component";
 import {MatSelectModule} from "@angular/material/select";
 import {ListShoesComponent} from "./shop/pages/list-shoes/list-shoes.component";
 import {EditarPerfilContentComponent} from "./editar-perfil/editar-perfil-content.component";
+import { DesignComponent } from './design/pages/design/design.component';
 
 const routes: Routes =[
   { path: 'home', component: MainWebComponent },
@@ -38,6 +39,7 @@ const routes: Routes =[
   { path: 'perfil', component: PerfilContentComponent },
   { path: 'editar', component: EditarPerfilContentComponent },
   { path: 'shop', component: NavComponent},
+  { path: 'design', component: DesignComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
 @NgModule({
@@ -54,7 +56,8 @@ const routes: Routes =[
     NavComponent,
     ListShoesComponent,
     PerfilContentComponent,
-    EditarPerfilContentComponent
+    EditarPerfilContentComponent,
+    DesignComponent
   ],
   imports: [
     BrowserModule,
