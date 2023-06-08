@@ -25,13 +25,13 @@
       <mat-form-field appearance="fill">
         <mat-label>Select a color</mat-label>
         <mat-select [(ngModel)]="selectedColor">
-          <mat-option value="red">Red</mat-option>
-          <mat-option value="blue">Blue</mat-option>
-          <mat-option value="black">Black</mat-option>
-          <mat-option value="white">White</mat-option>
-          <mat-option value="yellow">Yellow</mat-option>
-          <mat-option value="green">Green</mat-option>
-          <mat-option value="brown">Brown</mat-option>
+          <mat-option value="red">RED</mat-option>
+          <mat-option value="blue">BLUE</mat-option>
+          <mat-option value="black">BLACK</mat-option>
+          <mat-option value="white">WHITE</mat-option>
+          <mat-option value="yellow">YELLOW</mat-option>
+          <mat-option value="green">GREEN</mat-option>
+          <mat-option value="brown">BROWN</mat-option>
         </mat-select>
       </mat-form-field>
       <div class="color-circle" [style.backgroundColor]="selectedColor"></div>
@@ -40,9 +40,10 @@
       <mat-form-field appearance="fill">
         <mat-label>Select a material</mat-label>
         <mat-select [(ngModel)]="selectedMaterial">
-          <mat-option value="tela">Tela</mat-option>
-          <mat-option value="algodon">Algodón</mat-option>
-          <mat-option value="cuero">Cuero</mat-option>
+          <mat-option value="leather">LEATHER</mat-option>
+          <mat-option value="synthetic">SYNTHETIC</mat-option>
+          <mat-option value="fabric">FABRIC</mat-option>
+          <mat-option value="mesh">MESH</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
