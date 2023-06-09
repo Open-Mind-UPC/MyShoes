@@ -3,7 +3,7 @@
 <br>
 <br>
 
-<h1 class="mt-3 text-center"> Perfil del usuario</h1>
+<h1 class="mt-3 text-center"> User Profile</h1>
 
 
 <div class="container">
@@ -22,7 +22,7 @@
           <input type="email"  [formControl]="email" readonly="" class ="form-control1" />
         </div>
 
-        </div>
+      </div>
     </div>
 
     <div class="col-sm-4" >
@@ -31,17 +31,17 @@
         <input type="password" [formControl]="password" readonly="" class ="form-control" />
       </div>
       <br>
+    </div>
+
+    <div class = "col-1">
+
+      <a mat-button class ="bottonEditar" routerLink="/edit-profile" >Edit</a>
+
+    </div>
+    <br>
+
+
   </div>
-
-      <div class = "col-1">
-
-        <a mat-button class ="bottonEditar" routerLink="/editar" >Editar</a>
-
-      </div>
-<br>
-
-
-</div>
 
 </div>
 
@@ -55,5 +55,3 @@
 
 
 <app-footer-content></app-footer-content>
-
-
