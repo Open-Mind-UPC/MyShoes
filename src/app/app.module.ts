@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import{PerfilContentComponent} from "./perfil/perfil-content.component";
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from "@angular/common/http";
@@ -28,17 +27,18 @@ import { UserSignUpComponent } from './authentication/signup/pages/user-sign-up/
 import {NavComponent} from "./shop/pages/nav/nav.component";
 import {MatSelectModule} from "@angular/material/select";
 import {ListShoesComponent} from "./shop/pages/list-shoes/list-shoes.component";
-import {EditarPerfilContentComponent} from "./editar-perfil/editar-perfil-content.component";
 import { DesignComponent } from './design/pages/design/design.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {ProfileComponent} from "./profile/pages/profile/profile.component";
+import {EditProfileComponent} from "./profile/pages/edit-profile/edit-profile.component";
 
 const routes: Routes =[
   { path: 'home', component: MainWebComponent },
   { path: 'login', component: UserLoginComponent },
   { path: 'reset-password', component: ForgotPasswordComponent },
   { path: 'sign-up', component: UserSignUpComponent },
-  { path: 'perfil', component: PerfilContentComponent },
-  { path: 'editar', component: EditarPerfilContentComponent },
+  { path: 'profile', component:  ProfileComponent },
+  { path: 'edit-profile', component:EditProfileComponent },
   { path: 'shop', component: NavComponent},
   { path: 'design', component: DesignComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'}
@@ -56,8 +56,8 @@ const routes: Routes =[
     UserSignUpComponent,
     NavComponent,
     ListShoesComponent,
-    PerfilContentComponent,
-    EditarPerfilContentComponent,
+    ProfileComponent,
+    EditProfileComponent,
     DesignComponent
   ],
   imports: [
