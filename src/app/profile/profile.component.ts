@@ -7,12 +7,12 @@ import {FormControl} from "@angular/forms";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  name = new FormControl('Renzo');
-  email =new FormControl('renzo@gmail.com');
-  password=new FormControl('hola');
-  country=new FormControl('Lima');
-  newpassword=new FormControl('Limafff');
-  confirmnewpassword=new FormControl('Limaff45');
-  phonenumber = new FormControl('7855666');
+  name = new FormControl('name');
+  email =new FormControl('xxxxx@gmail.com');
+  password=new FormControl('hola785');
+  country=new FormControl('country');
+  newpassword=new FormControl('');
+  confirmnewpassword=new FormControl('');
+  phonenumber = new FormControl('000000000');
 
 }

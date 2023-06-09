@@ -10,8 +10,10 @@ export class EditProfileComponent {
   name='';
   email='';
   password='';
-
-
+  country='';
+  newpassword= '';
+  confirmnewpassword='';
+  phonenumber='';
   constructor( private route:Router) {
     // @ts-ignore
 
