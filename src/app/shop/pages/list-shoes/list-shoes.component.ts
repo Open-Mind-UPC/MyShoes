@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ShoesServiceService} from "../../services/shoes-service.service";
+import {ShoesService} from "../../../shared/services/shoes/shoes.service";
 
 @Component({
   selector: 'app-list-shoes',
@@ -9,7 +9,7 @@ import {ShoesServiceService} from "../../services/shoes-service.service";
 export class ListShoesComponent implements OnInit{
   title = 'shoes';
   @Input() shoes: Array<any>= [];
-  constructor(private shoesService: ShoesServiceService) {
+  constructor(private shoesService: ShoesService) {
   }
   ngOnInit() {
     this.shoesService.initShoes().subscribe((data: any) => {
