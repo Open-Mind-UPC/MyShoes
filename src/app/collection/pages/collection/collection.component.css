@@ -1,0 +1,31 @@
+.collection-container{
+  margin: 20px;
+  padding: 20px;
+}
+
+.container-tittle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin: 10px 40px 10px 10px;
+  border-radius: 10px;
+}
+
+.container-tittle h1 {
+  text-align: center;
+  margin: 0;
+  font-family: 'Montserrat' bold;
+}
+
+.add-button{
+  background-color: #0a0a0a;
+}
+
+.add-container{
+  display: flex;
+  align-items: center;
+
+}
