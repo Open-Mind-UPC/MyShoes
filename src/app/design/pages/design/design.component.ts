@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ShoesServiceService} from "../../../shop/services/shoes-service.service";
+import {ShoesService} from "../../../shared/services/shoes/shoes.service";
 
 @Component({
   selector: 'app-design',
@@ -14,7 +14,7 @@ export class DesignComponent implements OnInit{
   selectedColor: string = '';
   selectedMaterial: string = '';
 
-  constructor(private shoesService: ShoesServiceService) {
+  constructor(private shoesService: ShoesService) {
   }
   ngOnInit(): void {
     this.shoesService.initShoes().subscribe((data: any) => {

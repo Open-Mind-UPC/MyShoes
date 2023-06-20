@@ -31,6 +31,7 @@ import { DesignComponent } from './design/pages/design/design.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {ProfileComponent} from "./profile/pages/profile/profile.component";
 import {EditProfileComponent} from "./profile/pages/edit-profile/edit-profile.component";
+import { CollectionComponent } from './collection/pages/collection/collection.component';
 
 const routes: Routes =[
   { path: 'home', component: MainWebComponent },
@@ -41,6 +42,7 @@ const routes: Routes =[
   { path: 'edit-profile', component:EditProfileComponent },
   { path: 'shop', component: NavComponent},
   { path: 'design', component: DesignComponent},
+  { path: 'collection', component: CollectionComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
 @NgModule({
@@ -58,7 +60,8 @@ const routes: Routes =[
     ListShoesComponent,
     ProfileComponent,
     EditProfileComponent,
-    DesignComponent
+    DesignComponent,
+    CollectionComponent
   ],
   imports: [
     BrowserModule,
