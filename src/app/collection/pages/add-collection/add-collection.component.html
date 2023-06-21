@@ -1,0 +1,41 @@
+<div class="collection-container">
+  <div class="add-container">
+    <div class="container-tittle">
+      <h1>MY COLLECTIONS</h1>
+    </div>
+  </div>
+  <br>
+
+  <!-- Mini Formulario para crear una nueva colleción -->
+  <mat-card class="mat-card">
+    <mat-card-content class="content">
+      <div class="container">
+        <div class="image">Num1</div>
+        <div class="description">
+          <mat-form-field class="example-full-width">
+            <mat-label>Collection Title</mat-label>
+            <input matInput type="text" class="inputForm" placeholder="Title" [(ngModel)]="title" required name="title">
+          </mat-form-field>
+        </div>
+        <div class="options">
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <br>
+
+  <!-- Mostrar todas las colleciones existentes del usuario -->
+  <mat-card class="mat-card">
+    <mat-card-content class="content">
+      <div class="container">
+        <div class="image">Num1</div>
+        <div class="description">
+          <h1>Titulo</h1>
+          <p>Created at: 10/05/2023</p>
+        </div>
+        <div class="options">
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

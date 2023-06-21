@@ -3,12 +3,23 @@
     <div class="container-tittle">
       <h1>MY COLLECTIONS</h1>
     </div>
-    <button mat-mini-fab class="add-button" aria-label="New Collection"><mat-icon color="white">add</mat-icon></button>
+    <button mat-mini-fab class="add-button" aria-label="New Collection" routerLink="/add-collection"><mat-icon color="white">add</mat-icon></button>
   </div>
   <br>
   <mat-card class="mat-card">
-    <mat-card-title class="title">Name Example</mat-card-title>
-    <div class="img-container">Image Example</div>
-    <mat-card-content class="content">Cont Example</mat-card-content>
+    <mat-card-content class="content">
+      <div class="container">
+        <div class="image">Num1</div>
+        <div class="description">
+          <h1>Titulo</h1>
+          <p>Created at: 10/05/2023</p>
+        </div>
+        <div class="options">
+          <button mat-icon-button aria-label="Edit" routerLink="/update-collection"><mat-icon>edit</mat-icon></button>
+          <button mat-icon-button aria-label="Visibility"><mat-icon>visibility_off</mat-icon></button>
+          <button mat-icon-button aria-label="Delete"><mat-icon>deleted_forever</mat-icon></button>
+        </div>
+      </div>
+    </mat-card-content>
   </mat-card>
 </div>
