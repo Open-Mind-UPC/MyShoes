@@ -39,4 +39,5 @@ export class ShoesService {
     return this.http.get(`${this.basePath}?_sort=purchased&_order=desc&_limit=4`)
       .pipe(retry(2), catchError(this.handleError));
   }
+
 }
