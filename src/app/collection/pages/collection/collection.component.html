@@ -6,20 +6,22 @@
     <button mat-mini-fab class="add-button" aria-label="New Collection" routerLink="/add-collection"><mat-icon color="white">add</mat-icon></button>
   </div>
   <br>
-  <mat-card class="mat-card">
-    <mat-card-content class="content">
-      <div class="container">
-        <div class="image">Num1</div>
-        <div class="description">
-          <h1>Titulo</h1>
-          <p>Created at: 10/05/2023</p>
+  <div class="column" *ngFor="let item of collections">
+    <mat-card class="mat-card">
+      <mat-card-content class="content">
+        <div class="container">
+          <div class="image">Num1</div>
+          <div class="description">
+            <h1>{{item.title}}</h1>
+            <p>Created At: {{item.createdAt}}</p>
+          </div>
+          <div class="options">
+            <button mat-icon-button aria-label="Edit" routerLink="/update-collection"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button aria-label="Visibility"><mat-icon>visibility_off</mat-icon></button>
+            <button mat-icon-button aria-label="Delete"><mat-icon>deleted_forever</mat-icon></button>
+          </div>
         </div>
-        <div class="options">
-          <button mat-icon-button aria-label="Edit" routerLink="/update-collection"><mat-icon>edit</mat-icon></button>
-          <button mat-icon-button aria-label="Visibility"><mat-icon>visibility_off</mat-icon></button>
-          <button mat-icon-button aria-label="Delete"><mat-icon>deleted_forever</mat-icon></button>
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
