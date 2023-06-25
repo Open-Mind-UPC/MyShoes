@@ -21,24 +21,24 @@
           </mat-form-field>
         </div>
         <div class="options">
-          <button mat-icon-button aria-label="Submit"><mat-icon>done</mat-icon></button>
+          <button mat-icon-button aria-label="Submit" (click)="update()"><mat-icon>done</mat-icon></button>
         </div>
       </div>
     </mat-card-content>
   </mat-card>
   <br>
-  <!-- Mostrar todas las demas actualizaciones -->
-  <mat-card class="mat-card">
-    <mat-card-content class="content">
-      <div class="container">
-        <div class="image">Num1</div>
-        <div class="description">
-          <h1>Titulo</h1>
-          <p>Created at: 10/05/2023</p>
+    <mat-card class="mat-card">
+      <mat-card-content class="content">
+        <div class="container">
+          <div class="image">Num1</div>
+          <div class="description">
+            <h1>{{this.name}}</h1>
+            <p>Last Update At: {{this.updatedAt | date}}</p>
+          </div>
+          <div class="options">
+          </div>
         </div>
-        <div class="options">
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
+      </mat-card-content>
+    </mat-card>
+    <br>
 </div>
