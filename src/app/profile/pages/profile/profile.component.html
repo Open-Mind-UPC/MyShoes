@@ -1,85 +1,44 @@
-
 <app-header-content></app-header-content>
 <br>
 <br>
 <br>
 <br>
 
-
-
-
 <div class="container">
-  <div class="row" >
+  <div class="row">
 
-    <div class="col-sm-4" >
-      <div class="mb-3" form-group>
+    <div class="col-sm-4">
+      <div class="mb-3 form-group">
         <label class="form-Label1">Name</label>
-        <input type="text" [formControl]="name" readonly="" class ="form-control" />
+        <input type="text" [formControl]="name" readonly class="form-control" />
       </div>
     </div>
 
-    <div class="col-sm-4" >
-      <div class="mb-3" form-group>
-        <label class="form-Label2"> E-mail</label>
-        <div class="div input-group">
-          <input type="email"  [formControl]="email" readonly="" class ="form-control1" />
-        </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="mb-3 form-group">
+        <label class="form-Label2">E-mail</label>
+        <input type="email" [formControl]="email" readonly class="form-control1 email-input" />
       </div>
     </div>
 
-    <div class="col-sm-4" >
-      <div class="mb-3" form-group>
-        <label class="form-Label1"> Password</label>
-        <input type="password" [formControl]="password" readonly="" class ="form-control" />
+    <div class="col-sm-4">
+      <div class="mb-3 form-group">
+        <label class="form-Label2">Country</label>
+        <input type="text" [formControl]="country" readonly class="form-control1" />
       </div>
     </div>
 
-    <div class="col-sm-4" >
-      <div class="mb-3" form-group>
-        <label class="form-Label2"> Country</label>
-        <input type="text" [formControl]="country" readonly="" class ="form-control1" />
-      </div>
-    </div>
-
-    <div class="col-sm-4" >
-      <div class="mb-3" form-group>
+    <div class="col-sm-4">
+      <div class="mb-3 form-group">
         <label class="form-Label2">Phone number</label>
-        <div class="div input-group">
-          <input type="number"  [formControl]="phonenumber" readonly="" class ="form-control1" />
-        </div>
+        <input type="number" [formControl]="phonenumber" readonly class="form-control1" />
       </div>
     </div>
 
-    <div class="col-sm-4" >
-      <div class="mb-3" form-group>
-        <label class="form-Label2">New password</label>
-        <div class="div input-group">
-          <input type="password"  [formControl]="newpassword" readonly="" class ="form-control" />
-        </div>
-      </div>
+    <div class="col-1">
+      <a mat-button class="bottonEditar" routerLink="/edit-profile">EDIT</a>
     </div>
-    <div class="col-sm-4" >
-      <div class="mb-3" form-group>
-        <label class="form-Label2">Confirm new password</label>
-        <div class="div input-group">
-          <input type="password"  [formControl]="confirmnewpassword" readonly="" class ="form-control1" />
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <div class = "col-1">
-
-      <a mat-button class ="bottonEditar" routerLink="/edit-profile" >SAVE CHANGES</a>
-
-    </div>
-    <br>
-
-
   </div>
-
 </div>
 
 <br>
@@ -89,6 +48,5 @@
 <br>
 <br>
 <br>
-
 
 <app-footer-content></app-footer-content>
