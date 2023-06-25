@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, retry, throwError} from "rxjs";
+import {Collection} from '../model/collection';
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +27,25 @@ export class CollectionService {
     return throwError(() =>
       new Error('Something happened with request, please try again later'));
   }
-  getUsersCollections(){
-    return this.http.get(`${this.basePath}`, this.httpOptions)
+  getUsersCollections(userId: number){
+  return this.http.get(`${this.basePath}/user/${userId}`, this.httpOptions)
+  .pipe(retry(2), catchError(this.handleError));
+  }
+  createCollection(item: Collection){
+    return this.http.post(this.basePath, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  deleteCollection(id: number){
+    return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  getCollectionById(id:number){
+    return this.http.get(`${this.basePath}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  updateCollection(id: number, item: any){
+    return this.http.put(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }

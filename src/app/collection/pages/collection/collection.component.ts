@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CollectionService} from "../../services/collection.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-collection',
@@ -8,14 +9,25 @@ import {CollectionService} from "../../services/collection.service";
 })
 export class CollectionComponent implements OnInit{
   collections: Array<any>= [];
-  constructor(private collectionService: CollectionService) {
+  UserId = 1;
+
+  constructor(private collectionService: CollectionService, private router: Router) {
   }
   ngOnInit(): void {
-    this.collectionService.getUsersCollections().subscribe((data: any)=> {
-      this.collections = data;
+    this.collectionService.getUsersCollections(this.UserId).subscribe((data: any)=> {
       console.log(data);
+      this.collections = data;
+      console.log(this.collections);
     });
 
+  }
+  delete(id: number){
+    this.collectionService.deleteCollection(id).subscribe((response:any) => {
+      console.log("Collection created: ", response);
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        window.location.reload();
+      });
+    });
   }
 
 }
