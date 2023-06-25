@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {catchError, retry, throwError, map} from "rxjs";
+import {catchError, retry, throwError, map, tap} from "rxjs";
 import {User} from "../../../shared/model/user";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserLoginService {
-  basePath = 'http://localhost:3000/api/v1/users';
+  basePath = 'http://localhost:8080/api/v1/users';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -18,15 +18,16 @@ export class UserLoginService {
 
   login(email: string, password: string) {
     const url = `${this.basePath}?email=${email}&password=${password}`;
-    return this.http.get<User[]>(url, this.httpOptions)
+    return this.http.get<any>(url, this.httpOptions)
       .pipe(
-        map((users: User[]) => this.findMatchingUser(users, email, password)),
+        tap((response: any) => console.log(response)),
+        map((response: any) => this.findMatchingUser(response.content, email, password)),
         catchError(this.handleError)
       );
   }
 
   private findMatchingUser(users: User[], email: string, password: string): User | undefined {
-    return users.find(user => user.email === email && user.password === password);
+    return users.find((user: User) => user.email === email && user.password === password);
   }
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
