@@ -28,6 +28,9 @@
       </mat-error>
     </mat-form-field>
     <br>
+    <div *ngIf="registrationSuccessMessage" class="success-message">
+      {{ registrationSuccessMessage }}
+    </div>
     <button mat-raised-button color="warn" (click)="register()">Register</button>
     <br>
     <p>Already have an account?</p>
