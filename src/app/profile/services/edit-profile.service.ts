@@ -7,7 +7,7 @@ import {User} from "../../shared/model/user";
   providedIn: 'root'
 })
 export class EditProfileService {
-  basePath = 'http://localhost:3000/api/v1/users';
+  basePath = 'http://localhost:8080/api/v1/users';
 
   httpOptions = {
     headers: new HttpHeaders({
