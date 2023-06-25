@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, retry, throwError, map, tap} from "rxjs";
 import {UserResource} from "../../../shared/model/CreateUser";
+import {Collection} from "../../../collection/model/collection";
 
 @Injectable({
   providedIn: 'root'
@@ -31,20 +32,7 @@ export class UserSignUpService {
 
   //post
   registerUser(user: UserResource) {
-    return this.http.post<UserResource>(this.basePath, JSON.stringify(user), this.httpOptions)
-      .pipe(
-        tap((response: any) => {
-          console.log("Registration response:", response);
-        }),
-        catchError(this.handleError)
-      );
-  }
-  checkExistingEmail(email: string) {
-    const url = `${this.basePath}?email=${email}`;
-    return this.http.get<UserResource[]>(url, this.httpOptions)
-      .pipe(
-        map((users: UserResource[]) => users.length > 0),
-        catchError(this.handleError)
-      );
+    return this.http.post(this.basePath, JSON.stringify(user), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
   }
 }
