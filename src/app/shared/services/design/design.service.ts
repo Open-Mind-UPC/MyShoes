@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {catchError, retry, throwError, map} from "rxjs";
-import {User} from "../../../shared/model/user";
+import {catchError, retry, throwError} from "rxjs";
+import {design} from "../../../design/model/design";
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserSignUpService {
-  basePath = 'http://localhost:3000/api/v1/users';
-
+export class DesignService {
+  basePath = 'http://localhost:3000/api/v1/design';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-type': 'application/json',
@@ -16,7 +15,6 @@ export class UserSignUpService {
   }
   constructor(private http:HttpClient) { }
 
-  //
   handleError(error: HttpErrorResponse) {
     // Default error handling
     if (error.error instanceof ErrorEvent) {
@@ -28,18 +26,8 @@ export class UserSignUpService {
     return throwError(() =>
       new Error('Something happened with request, please try again later'));
   }
-
-  //post
-  registerUser(user: User) {
-    return this.http.post<User>(this.basePath, JSON.stringify(user), this.httpOptions)
-      .pipe(catchError(this.handleError));
-  }
-  checkExistingEmail(email: string) {
-    const url = `${this.basePath}?email=${email}`;
-    return this.http.get<User[]>(url, this.httpOptions)
-      .pipe(
-        map((users: User[]) => users.length > 0),
-        catchError(this.handleError)
-      );
+  saveDesign(item: design){
+    return this.http.post<design>(this.basePath, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
   }
 }
