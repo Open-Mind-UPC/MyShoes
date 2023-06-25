@@ -14,8 +14,7 @@ export class UserSignUpComponent implements OnInit {
   email: string = "";
   password: string = "";
   name: string = "";
-  country: string = "";
-  phone: string = "";
+  address: string = "";
   newUser!: User;
   _id=5;
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
@@ -38,7 +37,7 @@ export class UserSignUpComponent implements OnInit {
   register() {
     if (this.emailFormControl.valid && this.passwordFormControl.valid && this.nameFormControl.valid) {
       const id = this.generateId();
-      this.newUser = {id: id, name: this.name, email: this.email, password: this.password, country: this.country, phone: this.phone};
+      this.newUser = {id: id, name: this.name, email: this.email, password: this.password, address: this.address};
       this.userSignUpService.checkExistingEmail(this.email).subscribe(
         (isExisting: boolean) => {
           if (isExisting) {
