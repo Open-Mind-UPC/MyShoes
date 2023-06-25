@@ -12,8 +12,7 @@ export class ProfileComponent implements OnInit{
   name = new FormControl('');
   email = new FormControl('');
   password = new FormControl('');
-  country = new FormControl('');
-  phonenumber = new FormControl('');
+  address = new FormControl('');
 
   constructor(private userService: UserService) { }
 
@@ -27,8 +26,7 @@ export class ProfileComponent implements OnInit{
       this.name.setValue(currentUser.name || '');
       this.email.setValue(currentUser.email || '');
       this.password.setValue(currentUser.password || '');
-      this.country.setValue(currentUser.country || '');
-      this.phonenumber.setValue(currentUser.phone || '');
+      this.address.setValue(currentUser.address || '');
     }
   }
 }

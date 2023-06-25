@@ -15,8 +15,7 @@ export class EditProfileComponent implements OnInit{
   name = new FormControl('');
   email = new FormControl('');
   password = new FormControl('');
-  country = new FormControl('');
-  phone = new FormControl('');
+  address = new FormControl('');
   newpassword = new FormControl('');
   confirmpassword = new FormControl('');
   constructor(private route: Router, private userService: UserService, private editProfileService: EditProfileService) {}
@@ -30,16 +29,14 @@ export class EditProfileComponent implements OnInit{
       this.name.setValue(currentUser.name || '');
       this.email.setValue(currentUser.email || '');
       this.password.setValue(currentUser.password || '');
-      this.country.setValue(currentUser.country || '');
-      this.phone.setValue(currentUser.phone || '');
+      this.address.setValue(currentUser.address || '');
     }
   }
   saveChanges() {
     const updatedName = this.name.value ?? '';
     const updatedEmail = this.email.value ?? '';
-    const updatedCountry = this.country.value ?? '';
+    const updatedAddress = this.address.value ?? '';
     const updatedPassword = this.newpassword.value ?? '';
-    const updatedPhoneNumber = this.phone.value ?? '';
 
     const currentUser = this.userService.getCurrentUser();
     if (currentUser) {
@@ -48,8 +45,7 @@ export class EditProfileComponent implements OnInit{
         name: updatedName,
         email: updatedEmail,
         password: updatedPassword,
-        country: updatedCountry,
-        phone: updatedPhoneNumber
+        address: updatedAddress
       };
       this.editProfileService.updateUser(updatedUser).subscribe(
         ()=>{
