@@ -20,8 +20,7 @@ export class UserService {
       this.currentUser.name = updatedUser.name;
       this.currentUser.email = updatedUser.email;
       this.currentUser.password = updatedUser.password;
-      this.currentUser.country = updatedUser.country;
-      this.currentUser.phone = updatedUser.phone;
+      this.currentUser.address = updatedUser.address;
     }
   }
 }
