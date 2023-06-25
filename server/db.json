@@ -45,7 +45,6 @@
       "price": "$50",
       "img": "https://i.etsystatic.com/28924822/r/il/266da9/3400342986/il_fullxfull.3400342986_oh75.jpg",
       "purchased": 4
-
     },
     {
       "id": 2,
@@ -68,7 +67,7 @@
       "name": "Kakashi Sneakers",
       "description": "Personalized Kakashi Sneakers available in sizes 8 to 9.5 US",
       "price": "$70",
-      "img":"https://www.dhresource.com/0x0/f2/albu/g18/M00/2A/29/rBNaNmEXbR6AVgItAAGfK-Ikzlc543.jpg",
+      "img": "https://www.dhresource.com/0x0/f2/albu/g18/M00/2A/29/rBNaNmEXbR6AVgItAAGfK-Ikzlc543.jpg",
       "purchased": 25
     },
     {
@@ -76,7 +75,7 @@
       "name": "Nike Multicolor",
       "description": "Personalized Nike Multicolor Available in sizes 8 to 9.5 US",
       "price": "$50",
-      "img":"https://i.pinimg.com/236x/77/2b/3c/772b3cb40434604c67b45b81d065136c.jpg",
+      "img": "https://i.pinimg.com/236x/77/2b/3c/772b3cb40434604c67b45b81d065136c.jpg",
       "purchased": 1
     },
     {
@@ -84,15 +83,24 @@
       "name": "The Simpsons Nike Air Force",
       "description": "Personalized The Simpsons Nike Air Force available in sizes 8 to 9.5 US",
       "price": "$70",
-      "img":"https://i.etsystatic.com/21722038/r/il/1aca43/4039489801/il_1080xN.4039489801_po7k.jpg",
+      "img": "https://i.etsystatic.com/21722038/r/il/1aca43/4039489801/il_1080xN.4039489801_po7k.jpg",
       "purchased": 14
     }
   ],
-
   "design": [
     {
-
+      "id": 1,
+      "shoe_id": {
+        "id": 1,
+        "name": "Nike Air Force One drip blue",
+        "description": "Personalized painted blue drip style slippers Available in sizes from 8-9 US",
+        "price": "$50",
+        "img": "https://i.etsystatic.com/28924822/r/il/266da9/3400342986/il_fullxfull.3400342986_oh75.jpg",
+        "purchased": 4
+      },
+      "color": "red",
+      "material": "fabric",
+      "apiId": "v1"
     }
   ]
-
 }
