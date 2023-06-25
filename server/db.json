@@ -2,39 +2,19 @@
   "users": [
     {
       "id": 1,
-      "name": "William",
-      "email": "williammar954@hotmail.com",
-      "password": "upc123"
-    },
-    {
-      "id": 2,
-      "name": "Juan",
-      "email": "juan_2@hotmail.com",
-      "password": "cont123"
-    },
-    {
-      "id": 3,
-      "name": "Joanna",
-      "email": "joanna_riega@hotmail.com",
-      "password": "joannacontra"
-    },
-    {
-      "id": 4,
-      "name": "Tomas",
-      "email": "tommy_q@gmail.com",
-      "password": "mazeTomas"
-    },
-    {
-      "id": 5,
-      "name": "Fabricio",
-      "email": "fabricio_upc@hotmail.com",
-      "password": "opensource"
+      "name": "Alejo",
+      "email": "alejo@gmail.com",
+      "password": "1234",
+      "country": "Peru",
+      "phone": 999999999
     },
     {
       "id": 6,
-      "name": "Lucy",
-      "email": "lucy_op@hotmail.com",
-      "password": "anjowi12"
+      "name": "martin",
+      "email": "martin@gmail.com",
+      "password": "1234",
+      "country": "Peru",
+      "phone": 999999999
     }
   ],
   "shoes": [

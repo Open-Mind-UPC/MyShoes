@@ -1,18 +1,34 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
+import {UserService} from "../../../shared/services/user/user.service";
+import {User} from "../../../shared/model/user";
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
-  name = new FormControl('name');
-  email =new FormControl('xxxxx@gmail.com');
-  password=new FormControl('hola785');
-  country=new FormControl('country');
-  newpassword=new FormControl('');
-  confirmnewpassword=new FormControl('');
-  phonenumber = new FormControl('000000000');
+export class ProfileComponent implements OnInit{
+  name = new FormControl('');
+  email = new FormControl('');
+  password = new FormControl('');
+  country = new FormControl('');
+  phonenumber = new FormControl('');
 
+  constructor(private userService: UserService) { }
+
+  ngOnInit() {
+    this.loadUserData();
+  }
+
+  loadUserData() {
+    const currentUser: User | undefined = this.userService.getCurrentUser();
+    if (currentUser) {
+      this.name.setValue(currentUser.name || '');
+      this.email.setValue(currentUser.email || '');
+      this.password.setValue(currentUser.password || '');
+      this.country.setValue(currentUser.country || '');
+      this.phonenumber.setValue(currentUser.phone || '');
+    }
+  }
 }
