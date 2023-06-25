@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, retry, throwError} from "rxjs";
-import {user} from "../../../shared/model/user";
+import {User} from "../../../shared/model/user";
 
 @Injectable({
   providedIn: 'root'
@@ -30,8 +30,8 @@ export class UserSignUpService {
   }
 
   //post
-  registerUser(item: user){
-    return this.http.post<user>(this.basePath, JSON.stringify(item), this.httpOptions)
+  registerUser(item: User){
+    return this.http.post<User>(this.basePath, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
