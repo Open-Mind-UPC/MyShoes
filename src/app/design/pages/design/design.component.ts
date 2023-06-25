@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ShoesServiceService} from "../../../shop/services/shoes-service.service";
+import {ShoesService} from "../../../shared/services/shoes/shoes.service";
+import {FormControl, Validators} from "@angular/forms";
+import {design} from "../../model/design";
+import {DesignService} from "../../../shared/services/design/design.service";
 
 @Component({
   selector: 'app-design',
@@ -11,15 +14,19 @@ export class DesignComponent implements OnInit{
   @Input() shoes: Array<any>= [];
   selectedShoe: any;
   showColorField: boolean = false;
-  selectedColor: string = '';
-  selectedMaterial: string = '';
-
-  constructor(private shoesService: ShoesServiceService) {
+  _id=1;
+  name:string ="";
+  color: string = "";
+  material: string = "";
+  newDesign!: design;
+  colorFormControl = new FormControl('', [Validators.required]);
+  materialFormControl = new FormControl('', [Validators.required]);
+  nameFormControl = new FormControl('', [Validators.required]);
+  constructor(private shoesService: ShoesService,private designService: DesignService) {
   }
   ngOnInit(): void {
     this.shoesService.initShoes().subscribe((data: any) => {
       this.shoes = data;
-
     });
 
   }
@@ -27,4 +34,22 @@ export class DesignComponent implements OnInit{
     this.selectedShoe = shoe;
     this.showColorField = true;
   }
+
+  generateId(){
+    this._id++;
+    return this._id;
+  }
+
+  save(){
+    if(this.nameFormControl.valid && this.colorFormControl.valid && this.materialFormControl.valid){
+      const id = this.generateId();
+      this.newDesign = { id: id, name: this.name, color: this.color, material: this.material };
+      this.designService.saveDesign(this.newDesign).subscribe((response: any)=>(console.log("User registered: ", response)));
+    }
+    else{
+      console.log("Data Not Valid");
+    }
+  }
+
+
 }
