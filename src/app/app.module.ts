@@ -31,6 +31,9 @@ import { DesignComponent } from './design/pages/design/design.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {ProfileComponent} from "./profile/pages/profile/profile.component";
 import {EditProfileComponent} from "./profile/pages/edit-profile/edit-profile.component";
+import { CollectionComponent } from './collection/pages/collection/collection.component';
+import { AddCollectionComponent } from './collection/pages/add-collection/add-collection.component';
+import { UpdateCollectionComponent } from './collection/pages/update-collection/update-collection.component';
 
 const routes: Routes =[
   { path: 'home', component: MainWebComponent },
@@ -39,8 +42,11 @@ const routes: Routes =[
   { path: 'sign-up', component: UserSignUpComponent },
   { path: 'profile', component:  ProfileComponent },
   { path: 'edit-profile', component:EditProfileComponent },
-  { path: 'shop', component: NavComponent},
-  { path: 'design', component: DesignComponent},
+  { path: 'shop', component: NavComponent },
+  { path: 'design', component: DesignComponent },
+  { path: 'collection', component: CollectionComponent },
+  { path: 'add-collection', component: AddCollectionComponent },
+  { path: 'update-collection', component: UpdateCollectionComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
 @NgModule({
@@ -58,7 +64,10 @@ const routes: Routes =[
     ListShoesComponent,
     ProfileComponent,
     EditProfileComponent,
-    DesignComponent
+    DesignComponent,
+    CollectionComponent,
+    AddCollectionComponent,
+    UpdateCollectionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,44 @@
+<div class="collection-container">
+  <div class="add-container">
+    <div class="container-tittle">
+      <h1>MY COLLECTIONS</h1>
+    </div>
+  </div>
+  <br>
+
+  <!-- Mostrar formulario para actualizar de titulo de collection -->
+  <mat-card class="mat-card">
+    <mat-card-content class="content">
+      <div class="container">
+        <div class="image">Num1</div>
+        <div class="description">
+          <mat-form-field class="example-form-field">
+            <mat-label>Collection title</mat-label>
+            <input matInput type="text" [(ngModel)]="value">
+            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="options">
+          <button mat-icon-button aria-label="Submit" (click)="update()"><mat-icon>done</mat-icon></button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <br>
+    <mat-card class="mat-card">
+      <mat-card-content class="content">
+        <div class="container">
+          <div class="image">Num1</div>
+          <div class="description">
+            <h1>{{this.name}}</h1>
+            <p>Last Update At: {{this.updatedAt | date}}</p>
+          </div>
+          <div class="options">
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <br>
+</div>

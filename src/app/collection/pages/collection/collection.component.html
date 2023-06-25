@@ -1,0 +1,28 @@
+<div class="collection-container">
+  <div class="add-container">
+    <div class="container-tittle">
+      <h1>MY COLLECTIONS</h1>
+    </div>
+    <button mat-mini-fab class="add-button" aria-label="New Collection" routerLink="/add-collection"><mat-icon color="white">add</mat-icon></button>
+  </div>
+  <br>
+  <div class="column" *ngFor="let item of collections">
+    <mat-card class="mat-card">
+      <mat-card-content class="content">
+        <div class="container">
+          <div class="image">Num1</div>
+          <div class="description">
+            <h1>{{item.name}}</h1>
+            <p>Created At: {{item.createdAt | date}}</p>
+          </div>
+          <div class="options">
+            <button mat-icon-button aria-label="Edit" routerLink="/update-collection" [queryParams]="{ id: item.id }"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button aria-label="Visibility"><mat-icon>visibility_off</mat-icon></button>
+            <button mat-icon-button aria-label="Delete" (click)="delete(item.id)"><mat-icon>deleted_forever</mat-icon></button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <br>
+  </div>
+</div>
