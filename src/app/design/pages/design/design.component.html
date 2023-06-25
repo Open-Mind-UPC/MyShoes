@@ -7,7 +7,7 @@
   <div class="shoe-selection">
     <mat-form-field appearance="fill">
       <mat-label>Select a shoe</mat-label>
-      <mat-select (selectionChange)="onShoeSelection($event.value)">
+      <mat-select (selectionChange)="onShoeSelection($event.value)" [formControl]="shoe_idFormControl" [(ngModel)]="shoe_id">
         <mat-option *ngFor="let item of shoes" [value]="item">{{ item.name }}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -24,7 +24,7 @@
     <div class="color-container">
       <mat-form-field appearance="fill">
         <mat-label>Select a color</mat-label>
-        <mat-select [(ngModel)]="selectedColor">
+        <mat-select [formControl]="colorFormControl" [(ngModel)]="color" >
           <mat-option value="red">RED</mat-option>
           <mat-option value="blue">BLUE</mat-option>
           <mat-option value="black">BLACK</mat-option>
@@ -34,12 +34,12 @@
           <mat-option value="brown">BROWN</mat-option>
         </mat-select>
       </mat-form-field>
-      <div class="color-circle" [style.backgroundColor]="selectedColor"></div>
+      <div class="color-circle" [style.backgroundColor]="color"></div>
     </div>
     <div *ngIf="showColorField">
       <mat-form-field appearance="fill">
         <mat-label>Select a material</mat-label>
-        <mat-select [(ngModel)]="selectedMaterial">
+        <mat-select [formControl]="materialFormControl" [(ngModel)]="material" >
           <mat-option value="leather">LEATHER</mat-option>
           <mat-option value="synthetic">SYNTHETIC</mat-option>
           <mat-option value="fabric">FABRIC</mat-option>
@@ -47,7 +47,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <mat-button-toggle>SAVE</mat-button-toggle>
+    <mat-button-toggle (click)="save()">SAVE</mat-button-toggle>
   </div>
 </div>
 <br>
