@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {catchError, retry, throwError, map} from "rxjs";
-import {User} from "../../../shared/model/user";
+import {catchError, retry, throwError, map, tap} from "rxjs";
+import {UserResource} from "../../../shared/model/CreateUser";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserSignUpService {
-  basePath = 'http://localhost:3000/api/v1/users';
+  basePath = 'http://localhost:8080/api/v1/users';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -30,15 +30,20 @@ export class UserSignUpService {
   }
 
   //post
-  registerUser(user: User) {
-    return this.http.post<User>(this.basePath, JSON.stringify(user), this.httpOptions)
-      .pipe(catchError(this.handleError));
+  registerUser(user: UserResource) {
+    return this.http.post<UserResource>(this.basePath, JSON.stringify(user), this.httpOptions)
+      .pipe(
+        tap((response: any) => {
+          console.log("Registration response:", response);
+        }),
+        catchError(this.handleError)
+      );
   }
   checkExistingEmail(email: string) {
     const url = `${this.basePath}?email=${email}`;
-    return this.http.get<User[]>(url, this.httpOptions)
+    return this.http.get<UserResource[]>(url, this.httpOptions)
       .pipe(
-        map((users: User[]) => users.length > 0),
+        map((users: UserResource[]) => users.length > 0),
         catchError(this.handleError)
       );
   }

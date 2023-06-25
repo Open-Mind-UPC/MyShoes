@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 import {UserSignUpService} from "../../services/user-sign-up.service";
-import {User} from "../../../../shared/model/user";
+import {UserResource} from "../../../../shared/model/CreateUser";
+
 
 @Component({
   selector: 'app-user-sign-up',
@@ -15,11 +16,11 @@ export class UserSignUpComponent implements OnInit {
   password: string = "";
   name: string = "";
   address: string = "";
-  newUser!: User;
-  _id=5;
+  newUser!: UserResource;
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   passwordFormControl = new FormControl('', [Validators.required]);
   nameFormControl = new FormControl('', [Validators.required]);
+  addressFormControl = new FormControl('',[Validators.required]);
   registrationSuccessMessage: string = "";
 
   constructor(private userSignUpService: UserSignUpService) {
@@ -28,39 +29,31 @@ export class UserSignUpComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  generateId(){
-    this._id++;
-    return this._id;
-  }
-
   register() {
-    if (this.emailFormControl.valid && this.passwordFormControl.valid && this.nameFormControl.valid) {
-      const id = this.generateId();
-      this.newUser = {id: id, name: this.name, email: this.email, password: this.password, address: this.address};
-      this.userSignUpService.checkExistingEmail(this.email).subscribe(
-        (isExisting: boolean) => {
-          if (isExisting) {
-            this.registrationSuccessMessage = "Email already exists";
-          } else {
-            this.userSignUpService.registerUser(this.newUser).subscribe(
-              (response: any) => {
-                console.log("User registered: ", response);
-                this.registrationSuccessMessage = "Registration successful!";
-              },
-              (error: any) => {
-                console.error("Registration failed: ", error);
-                this.registrationSuccessMessage = "Registration failed. Please try again.";
-              }
-            );
-          }
+    if (
+      this.emailFormControl.valid &&
+      this.passwordFormControl.valid &&
+      this.nameFormControl.valid &&
+      this.addressFormControl.valid
+    ) {
+      this.newUser = {
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        address: this.address
+      };
+      this.userSignUpService.registerUser(this.newUser).subscribe(
+        (response: any) => {
+          console.log('Registration response:', response);
+          this.registrationSuccessMessage = 'Registration successful!';
         },
-        (error) => {
-          console.error('Error checking existing email:', error);
+        (error: any) => {
+          console.error('Registration failed:', error);
+          this.registrationSuccessMessage = '';
         }
       );
     } else {
-      console.log("Data Not Valid");
+      console.log('Data Not Valid');
     }
   }
 }
