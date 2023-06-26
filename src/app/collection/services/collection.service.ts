@@ -7,7 +7,7 @@ import {Collection} from '../model/collection';
   providedIn: 'root'
 })
 export class CollectionService {
-  basePath = 'https://resolute-sack-production.up.railway.app/api/v1/collections';
+  basePath = 'https://myshoesbackend-production.up.railway.app/api/v1/collections';
 
   httpOptions = {
     headers: new HttpHeaders({

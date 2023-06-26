@@ -7,7 +7,7 @@ import {User} from "../../shared/model/user";
   providedIn: 'root'
 })
 export class EditProfileService {
-  basePath = 'https://resolute-sack-production.up.railway.app/api/v1/users';
+  basePath = 'https://myshoesbackend-production.up.railway.app/api/v1/users';
 
   httpOptions = {
     headers: new HttpHeaders({

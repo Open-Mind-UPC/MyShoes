@@ -6,7 +6,7 @@ import {catchError, Observable, retry, throwError} from "rxjs";
   providedIn: 'root'
 })
 export class ShoesService {
-  basePath = 'https://resolute-sack-production.up.railway.app/api/v1/shoes';
+  basePath = 'https://myshoesbackend-production.up.railway.app/api/v1/shoes';
 
   httpOptions = {
     headers: new HttpHeaders({
