@@ -1,8 +1,8 @@
 export interface Shoes{
-  id: number;
   name: string;
-  description: string;
+  size: number;
   price: number;
   img: string;
-  purchased: number;
+  category_id: number;
+  collection_id: number;
 }
