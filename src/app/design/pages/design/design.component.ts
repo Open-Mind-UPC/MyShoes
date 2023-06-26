@@ -25,8 +25,8 @@ export class DesignComponent implements OnInit{
   constructor(private shoesService: ShoesService,private designService: DesignService) {
   }
   ngOnInit(): void {
-    this.shoesService.initShoes().subscribe((data: any) => {
-      this.shoes = data;
+    this.shoesService.getShoes().subscribe((data: any) => {
+      this.shoes = data.content;
     });
 
   }
