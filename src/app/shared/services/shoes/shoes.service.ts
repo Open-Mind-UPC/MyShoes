@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError, Observable, retry, throwError} from "rxjs";
-import {Shoes} from "../../../shop/model/shoes";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoesService {
-  basePath = 'http://localhost:8080/api/v1/shoes';
+  basePath = 'https://resolute-sack-production.up.railway.app/api/v1/shoes';
 
   httpOptions = {
     headers: new HttpHeaders({

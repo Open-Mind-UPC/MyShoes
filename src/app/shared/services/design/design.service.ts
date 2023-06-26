@@ -7,7 +7,7 @@ import {design} from "../../../design/model/design";
   providedIn: 'root'
 })
 export class DesignService {
-  basePath = 'http://localhost:8080/api/v1/design';
+  basePath = 'https://resolute-sack-production.up.railway.app/api/v1/design';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-type': 'application/json',
