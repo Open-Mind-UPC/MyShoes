@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import {catchError, Observable, retry, throwError} from "rxjs";
+import {catchError, retry, throwError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -34,8 +34,8 @@ export class ShoesService {
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  getTrendShoes(){
-    return this.http.get(`${this.basePath}?_sort=purchased&_order=desc&_limit=4`)
+  getShoes(){
+    return this.http.get(`${this.basePath}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
