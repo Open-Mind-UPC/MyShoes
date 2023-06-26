@@ -7,7 +7,7 @@ import {Shoes} from "../../../shop/model/shoes";
   providedIn: 'root'
 })
 export class ShoesService {
-  basePath = 'http://localhost:3000/api/v1/shoes';
+  basePath = 'http://localhost:8080/api/v1/shoes';
 
   httpOptions = {
     headers: new HttpHeaders({
