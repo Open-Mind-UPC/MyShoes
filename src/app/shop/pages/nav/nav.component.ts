@@ -9,8 +9,8 @@ import {ShoesService} from "../../../shared/services/shoes/shoes.service";
 export class NavComponent {
   shoes: Array<any> = [];
   constructor(private shoesService: ShoesService) {
-    this.shoesService.initShoes().subscribe((data: any) => {
-      this.shoes = data;
+    this.shoesService.getShoes().subscribe((data: any) => {
+      this.shoes = data.content;
     });
   }
 }
