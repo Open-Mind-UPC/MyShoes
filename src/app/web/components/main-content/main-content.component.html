@@ -6,7 +6,7 @@
     SEE MORE<mat-icon>more_horiz</mat-icon></a>
 </div>
 <div class="main-content2">
-  <div class="column" *ngFor="let item of trends">
+  <div class="column" *ngFor="let item of trends.slice(0, 4)">
     <mat-card class="mat-card">
       <mat-card-title class="title">{{item.name}}</mat-card-title>
       <div class="img-container"><img src="{{item.img}}" alt="{{item.name}}"></div>
