@@ -1,0 +1,49 @@
+<div class = "container">
+  <form class="register-form">
+    <h1 class="title">Sign Up</h1>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="text" class="inputForm" [formControl]="emailFormControl" placeholder="Ex pat@example.com" [(ngModel)]="email" required name="email">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" class = "inputForm" [formControl]="passwordFormControl" [(ngModel)]="password" name="password" placeholder="password" required>
+      <mat-error *ngIf="passwordFormControl.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" class = "inputForm" [formControl]="nameFormControl" [(ngModel)]="name" name="name" placeholder="name" required>
+      <mat-error *ngIf="nameFormControl.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input matInput type="text" class="inputForm" [formControl]="addressFormControl" [(ngModel)]="address"
+             name="address" placeholder="address" required>
+      <mat-error *ngIf="addressFormControl.hasError('required')">
+        Address is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+    <div *ngIf="registrationSuccessMessage" class="success-message">
+      {{ registrationSuccessMessage }}
+    </div>
+    <button mat-raised-button color="warn" (click)="register()">Register</button>
+    <br>
+    <p>Already have an account?</p>
+    <a class="log-in" href="/login">Log in</a>
+  </form>
+</div>

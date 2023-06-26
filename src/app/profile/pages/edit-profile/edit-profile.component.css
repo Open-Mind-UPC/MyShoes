@@ -1,0 +1,82 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 0px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(225, 195, 192, 0.92);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col-sm-4 {
+  width: calc(50% - 70px);
+  margin-bottom: 20px;
+}
+.col-sm-5 {
+  width: calc(40% - 28px);
+  margin-bottom: 40px;
+}
+
+.form-Label1, .form-Label2 {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control, .form-control1 {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #0a0a0a;
+  border-radius: 10px;
+  background-color: rgba(225, 195, 192, 0.92);
+  color: #333;
+}
+
+.form-control2, .form-control3{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  color: #333;
+}
+.bottonEditar {
+  display: block;
+  margin: 0 auto;
+  background-color: #090909 !important;
+  color: #faf7f7;
+  text-color:white;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.bottonEditar:hover {
+  background-color: #3071a9;
+  text-overline-color: white;
+}
+.text-center {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px #ccc;
+}
+.col-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mat-mdc-button:not(:disabled) {
+  color: #efebeb;
+}

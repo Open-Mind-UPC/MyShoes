@@ -1,57 +1,32 @@
 <div class="main-content1">
-  <a mat-button class="action-button2" href="/index.html" target="_self">
+  <a mat-button class="action-button2" href="/shop" target="_self">
     TRENDS<mat-icon>local_fire_department</mat-icon></a>
   <span class="default-spacer"></span>
-  <a mat-button class="action-button2" href="/index.html" target="_self">
+  <a mat-button class="action-button2" href="/shop" target="_self">
     SEE MORE<mat-icon>more_horiz</mat-icon></a>
 </div>
 <div class="main-content2">
-  <mat-card class="article-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>ZAPATILLA FLORES Y AVES</mat-card-title>
-      </mat-card-title-group>
-    </mat-card-header>
-    <img mat-card-image src="assets/zapatillas1.jpg" alt="ZAPATILLA FLORES Y AVES"/>
-    <mat-card-content>
-      <p>PRECIO: S/220.00</p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="article-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>ZAPATILLA PELUCHES </mat-card-title>
-      </mat-card-title-group>
-    </mat-card-header>
-    <img mat-card-image src="assets/zapatillas2.jpg" alt="ZAPATILLA PELUCHES"/>
-    <mat-card-content>
-      <p>PRECIO: S/189.00</p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="article-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>ZAPATILLA CORAZONES</mat-card-title>
-      </mat-card-title-group>
-    </mat-card-header>
-    <img mat-card-image src="assets/zapatillas3.jpg" alt="ZAPATILLA CORAZONES"/>
-    <mat-card-content>
-      <p>PRECIO: S/149.00</p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="article-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>ZAPATILLA SNOOPY</mat-card-title>
-      </mat-card-title-group>
-    </mat-card-header>
-    <img mat-card-image src="assets/zapatillas4.jpg" alt="ZAPATILLA SNOOPY"/>
-    <mat-card-content>
-      <p>PRECIO: S/200.00</p>
-    </mat-card-content>
-  </mat-card>
+  <div class="column" *ngFor="let item of trends">
+    <mat-card class="mat-card">
+      <mat-card-title class="title">{{item.name}}</mat-card-title>
+      <div class="img-container"><img src="{{item.img}}" alt="{{item.name}}"></div>
+      <mat-card-content class="content">{{item.description}}</mat-card-content>
+      <div class="price-container">Price: {{item.price}}</div>
+      <mat-form-field appearance="fill">
+        <mat-label>Size</mat-label>
+        <mat-select>
+          <mat-option value="8 US">8 US</mat-option>
+          <mat-option value="8.5 US">8.5 US</mat-option>
+          <mat-option value="9 US">9 US</mat-option>
+          <mat-option value="9.5 US">9.5 US</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button style="background-color: black; color:white" mat-raised-button label="BUY">BUY</button>
+    </mat-card>
+  </div>
 </div>
+
 <div class="main-content3">
-  <img class="img1" src="assets/zapatillas5.jpg" alt="ZAPATILLAS DISEÑO"/>
-  <a mat-button class="button-inside-image" href="/index.html">EMPIEZA A DISEÑAR</a>
+  <img class="img1" src="https://cdn.discordapp.com/attachments/1094699396026880057/1103450727713611796/image.png" alt="ZAPATILLAS DISEÑO"/>
+  <a mat-button class="button-inside-image" href="/design">Start to design</a>
 </div>

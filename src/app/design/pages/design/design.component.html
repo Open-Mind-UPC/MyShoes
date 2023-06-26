@@ -1,0 +1,54 @@
+<app-header-content/>
+<br>
+<div>
+  <h1>DESIGN YOR SHOE</h1>
+</div>
+<div class="container">
+  <div class="shoe-selection">
+    <mat-form-field appearance="fill">
+      <mat-label>Select a shoe</mat-label>
+      <mat-select (selectionChange)="onShoeSelection($event.value)" [formControl]="shoe_idFormControl" [(ngModel)]="shoe_id">
+        <mat-option *ngFor="let item of shoes" [value]="item">{{ item.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <mat-card class="card-container" *ngIf="selectedShoe">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{selectedShoe.name}}</mat-card-title>
+      </mat-card-title-group>
+    </mat-card-header>
+    <img class="image" [src]="selectedShoe.img" alt="{{ selectedShoe.name }}" style="width: 100%; height: auto;">
+  </mat-card>
+  <div class="color-selection" *ngIf="showColorField">
+    <div class="color-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Select a color</mat-label>
+        <mat-select [formControl]="colorFormControl" [(ngModel)]="color" >
+          <mat-option value="red">RED</mat-option>
+          <mat-option value="blue">BLUE</mat-option>
+          <mat-option value="black">BLACK</mat-option>
+          <mat-option value="white">WHITE</mat-option>
+          <mat-option value="yellow">YELLOW</mat-option>
+          <mat-option value="green">GREEN</mat-option>
+          <mat-option value="brown">BROWN</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="color-circle" [style.backgroundColor]="color"></div>
+    </div>
+    <div *ngIf="showColorField">
+      <mat-form-field appearance="fill">
+        <mat-label>Select a material</mat-label>
+        <mat-select [formControl]="materialFormControl" [(ngModel)]="material" >
+          <mat-option value="leather">LEATHER</mat-option>
+          <mat-option value="synthetic">SYNTHETIC</mat-option>
+          <mat-option value="fabric">FABRIC</mat-option>
+          <mat-option value="mesh">MESH</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-button-toggle (click)="save()">SAVE</mat-button-toggle>
+  </div>
+</div>
+<br>
+<app-footer-content/>
