@@ -12,8 +12,8 @@ export class MainContentComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.shoesService.getTrendShoes().subscribe((response: any)=> {
-      this.trends = response;
+    this.shoesService.getShoes().subscribe((response: any)=> {
+      this.trends = response.content;
       console.log(this.trends);
     });
   }
