@@ -13,8 +13,8 @@ export class ListShoesComponent implements OnInit{
   constructor(private shoesService: ShoesService) {
   }
   ngOnInit() {
-    this.shoesService.initShoes().subscribe((data: any) => {
-      this.shoes = data;
+    this.shoesService.getShoes().subscribe((data: any) => {
+      this.shoes = data.content;
     });
   }
 }
